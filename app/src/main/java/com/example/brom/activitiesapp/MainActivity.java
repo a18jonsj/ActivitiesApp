@@ -2,17 +2,35 @@ package com.example.brom.activitiesapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
-    private String[] mountainNames = {"Matterhorn","Mont Blanc","Denali"};
-    private String[] mountainLocations = {"Alps","Alps","Alaska"};
-    private int[] mountainHeights ={4478,4808,6190};
-    // Create ArrayLists from the raw data above and use these lists when populating your ListView.
-   //FORKED?PUSH?
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+            private String[] mountainNames = {"Matterhorn","Mont Blanc","Denali"};
+            private String[] mountainLocations = {"Alps","Alps","Alaska"};
+            private int[] mountainHeights ={4478,4808,6190};
+            // Create ArrayLists from the raw data above and use these lists when populating your ListView.
+            //FORKED?PUSH?
+
+
+
+            ListView listView;
+
+            @Override
+            protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                setContentView(R.layout.activity_main);
+
+                listView=(ListView) findViewById(R.id.listview);
+
+                ArrayList<String> arrayList= new ArrayList<String>(Arrays.asList(mountainNames));
+
+                ArrayAdapter arrayAdapter=new ArrayAdapter (this, R.layout.list_item_textview,R.id.list_item_textview, arrayList);
+
+                listView.setAdapter(arrayAdapter);
 
         // 1. Create a ListView as in previous assignment
         // 2. Create a new activity named "MountainDetailsActivity
