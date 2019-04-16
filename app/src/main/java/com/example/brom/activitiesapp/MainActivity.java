@@ -1,5 +1,6 @@
 package com.example.brom.activitiesapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -32,9 +33,13 @@ public class MainActivity extends AppCompatActivity {
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //
+                        openAndroidMountainActivity();
                     }
                 });
+
+
+
+
 
                 listView=(ListView) findViewById(R.id.listview);
 
@@ -65,5 +70,14 @@ public class MainActivity extends AppCompatActivity {
         // 8. From the MountainDetailsActivity you should have an option to "go back" using an
         //    left arro button. This is done by letting the MainActivity be the parent activity to
         //    MountainDetailsActivity.
+
+
     }
+
+    public void openAndroidMountainActivity()
+    {
+        Intent intent= new Intent(this,AndroidMountainActivity.class);
+        startActivity(intent);
+    }
+
 }
