@@ -2,9 +2,12 @@ package com.example.brom.activitiesapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
+import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -18,11 +21,20 @@ public class MainActivity extends AppCompatActivity {
 
 
             ListView listView;
+            private Button button;
 
             @Override
             protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
                 setContentView(R.layout.activity_main);
+
+                button =(Button) findViewById(R.id.button);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //
+                    }
+                });
 
                 listView=(ListView) findViewById(R.id.listview);
 
@@ -31,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
                 ArrayAdapter arrayAdapter=new ArrayAdapter (this, R.layout.list_item_textview,R.id.list_item_textview, arrayList);
 
                 listView.setAdapter(arrayAdapter);
+
+
 
         // 1. Create a ListView as in previous assignment
         // 2. Create a new activity named "MountainDetailsActivity
