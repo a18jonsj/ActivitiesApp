@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.security.PrivateKey;
 import java.util.ArrayList;
@@ -48,6 +50,13 @@ public class MainActivity extends AppCompatActivity {
                 ArrayAdapter arrayAdapter=new ArrayAdapter (this, R.layout.list_item_textview,R.id.list_item_textview, arrayList);
 
                 listView.setAdapter(arrayAdapter);
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        openAndroidMountainActivity();
+                    }
+
+                });
 
 
 
