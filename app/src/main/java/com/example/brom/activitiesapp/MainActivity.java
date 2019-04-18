@@ -54,6 +54,11 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         openAndroidMountainActivity();
+
+                        Intent intent = new Intent(MainActivity.this, AndroidMountainActivity.class);
+                        intent.putExtra("Berg", mountainNames[position] + mountainHeights [position]);
+                        startActivity(intent);
+
                     }
 
                 });
