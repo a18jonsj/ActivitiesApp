@@ -56,7 +56,9 @@ public class MainActivity extends AppCompatActivity {
                         openAndroidMountainActivity();
 
                         Intent intent = new Intent(MainActivity.this, AndroidMountainActivity.class);
-                        intent.putExtra("Berg", mountainNames[position] + "\nHeight: " +  mountainHeights [position] + "\nLocation: " +  mountainLocations [position]);
+                        intent.putExtra("Berg", mountainNames[position]);
+                        intent.putExtra("Berg1", mountainHeights[position]);
+                        intent.putExtra("Berg2", mountainLocations[position]);
                         startActivity(intent);
 
                     }
