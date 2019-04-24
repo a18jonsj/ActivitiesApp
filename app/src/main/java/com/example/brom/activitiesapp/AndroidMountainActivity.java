@@ -28,6 +28,9 @@ public class AndroidMountainActivity extends AppCompatActivity {
         TextView name = findViewById(R.id.textView);
         name.setText(incomingBerg2);
 
+        TextView namn = findViewById(R.id.textView3);
+        namn.setText(incomingBerg);
+
         ImageView bild1 = findViewById(R.id.bild);
         bild1.setImageResource(R.drawable.denali);
 
